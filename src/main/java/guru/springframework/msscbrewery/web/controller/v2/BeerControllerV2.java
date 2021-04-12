@@ -13,7 +13,6 @@ import java.util.UUID;
 @RestController
 public class BeerControllerV2 {
 
-
     public static final String API_V2_BEER = "/api/v2/beer";
     private final BeerServiceV2 beerServiceV2;
 

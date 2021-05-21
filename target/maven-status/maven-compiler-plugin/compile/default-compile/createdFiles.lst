@@ -1,4 +1,5 @@
 guru\springframework\msscbrewery\web\model\v2\BeerDtoV2.class
+guru\springframework\msscbrewery\web\mappers\DateMapper.class
 guru\springframework\msscbrewery\services\BeerServiceImpl.class
 guru\springframework\msscbrewery\services\CustomerServiceImpl.class
 guru\springframework\msscbrewery\web\controller\BeerController.class

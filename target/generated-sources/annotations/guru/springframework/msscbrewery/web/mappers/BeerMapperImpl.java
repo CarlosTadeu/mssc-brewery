@@ -8,10 +8,12 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-05-19T14:00:23-0300",
+    date = "2021-05-21T09:32:56-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.8 (Oracle Corporation)"
 )
 public class BeerMapperImpl implements BeerMapper {
+
+    private final DateMapper dateMapper = new DateMapper();
 
     @Override
     public BeerDto beerToBeerDto(Beer beer) {
@@ -24,6 +26,8 @@ public class BeerMapperImpl implements BeerMapper {
         beerDto.id( beer.getId() );
         beerDto.beerName( beer.getBeerName() );
         beerDto.upc( beer.getUpc() );
+        beerDto.createdDate( dateMapper.asOffsetDateTime( beer.getCreatedDate() ) );
+        beerDto.lastUpdatedDate( dateMapper.asOffsetDateTime( beer.getLastUpdatedDate() ) );
 
         return beerDto.build();
     }
@@ -39,6 +43,8 @@ public class BeerMapperImpl implements BeerMapper {
         beer.id( beerDto.getId() );
         beer.beerName( beerDto.getBeerName() );
         beer.upc( beerDto.getUpc() );
+        beer.createdDate( dateMapper.asTimestamp( beerDto.getCreatedDate() ) );
+        beer.lastUpdatedDate( dateMapper.asTimestamp( beerDto.getLastUpdatedDate() ) );
 
         return beer.build();
     }
